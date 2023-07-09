@@ -1,0 +1,29 @@
+<div class="products">
+    <div>
+
+        <div class="nav">
+            <ul>
+                <li><a ng-href="#/home">Home</a></li>
+                <li><a ng-href="#/products">Products</a></li>
+                <li><a ng-href="#/fav">Favourites</a></li>
+                <li><a ng-href="#/profile">Profile</a></li>
+                <li><a ng-href="#/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="auth-box">
+            <div>
+                <h1>Profile</h1>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" ng-model="user.name"><br>
+                <!-- <p>{{reg_name}}</p> -->
+                <label for="email">email</label>
+                <input type="email" id="email" ng-model="user.email"><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" ng-model="user.password">
+                <br>
+                <button ng-click="update_profile_user(user)">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

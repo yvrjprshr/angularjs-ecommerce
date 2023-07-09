@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     /* padding-top: 200px; */
-    background-color: #ffe1e1;
+    background-color: #a58efa;
 }
 
 .auth-box label{
@@ -40,7 +40,7 @@
     width: 100vw;
     /* height: 100vh; */
     /* padding-top: 200px; */
-    background-color: #ffe1e1;
+    background-color: #a58efa;
 }
 
 .products>div .products{
@@ -65,7 +65,7 @@
 }
 
 .products>div .categoriesSort{
-    display: flex;
+    display: flex; 
     justify-content: center;
     margin-top: 20px;
 }
@@ -76,7 +76,7 @@ select{
     background-color: gray;
     border-radius: 30px;
     font-size: 15px;
-    width:60px;
+    /* width:60px; */
 }
 
 .products .product{
@@ -124,11 +124,11 @@ button:hover{
 }
 
 .products > div > .nav > ul > li:hover{
-    background-color: pink;
+    background-color: #a58efa;
 }
 
 .home{
-    background-color: greenyellow;
+    background-color: #a58efa;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
@@ -159,7 +159,7 @@ button:hover{
 }
 
 .home > div > .nav > ul > li:hover{
-    background-color: pink;
+    background-color: #a58efa;
 }
 
 .home > h1{

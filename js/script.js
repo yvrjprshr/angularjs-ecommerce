@@ -11,7 +11,7 @@ app.config(function($routeProvider){
     }).when('/login',{
         templateUrl:'login.html',
         controller: 'loginController'
-    }).when('/signup',{
+    }).when('/signup',{ 
         templateUrl:'signup.html',
         controller: 'signupController'
     }).when('/products',{
@@ -23,6 +23,9 @@ app.config(function($routeProvider){
     }).when('/fav',{
         templateUrl:'fav.html',
         controller: 'favController'
+    }).when('/profile',{
+        templateUrl:'profile.html',
+        controller: 'profileController'
     }).when('/logout',{
         redirectTo: '/'
     }).otherwise({
@@ -45,6 +48,9 @@ app.run(['$rootScope', 'favService', '$location', function($rootScope, favServic
     $rootScope.addToFav = function(product){
         console.log('handser', product);
         favService.addFav(product);
+    };
+    $rootScope.removeFromFav = function(product){
+        favService.removeFromFav(product);
     };
 }]);
 
@@ -83,6 +89,7 @@ app.controller('loginController', ['$scope', '$location', '$rootScope', 'userSer
         }
     }
 }]);
+
 
 app.controller('signupController', ['$scope', 'userService', '$location', function($scope, userService, $location){
     $scope.reg_name;
@@ -184,4 +191,14 @@ app.controller('favController', ['$scope', '$rootScope', 'favService', function(
 
 app.controller('productController', ['$scope', '$rootScope', '$routeParams', function($scope, $rootScope, $routeParams){
     console.log('id', $routeParams.id);
+}]);
+
+
+app.controller('profileController', ['$scope', '$rootScope', 'userService', '$location', function($scope, $rootScope, userService, $location){
+    $scope.profile_user = $rootScope.user;
+    $scope.update_profile_user = function(user){
+        userService.updateUser(user);
+        console.log(user);
+        // $location.path('/profile');
+    }
 }]);
