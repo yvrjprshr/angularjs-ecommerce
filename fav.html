@@ -1,0 +1,53 @@
+<div class="products">
+
+    <div>
+        <div class="nav">
+            <ul>
+                <li><a ng-href="#/home">Home</a></li>
+                <li><a ng-href="#/products">Products</a></li>
+                <li><a ng-href="#/fav">Favourites</a></li>
+                <li><a ng-href="#/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="sortBtns">
+            <button ng-click="sortPriceInc()">sort by price: lowest</button>
+            <button ng-click="sortPriceDec()">sort by price: highest</button>
+            <button ng-click="sortRatingInc()">sort by rating: lowest</button>
+            <button ng-click="sortRatingDec()">sort by rating: highest</button>
+        </div>
+        <div class="products">
+            <div class="product" ng-repeat="x in favProducts">
+                <div ng-click="sendSingleProduct(x)">
+
+                    <div class="product-image">
+                        <img src="{{x.image}}" alt="">
+                    </div>
+                    <div class="product-name">
+                        <b>
+                            {{x.title}}
+                        </b>
+                    </div>
+                    <div class="product-price">
+                        <i>
+                            {{x.price}}
+                        </i>
+                    </div>
+                    <div class="product-description">
+                        {{x.description}}
+                    </div>
+                    <div class="product-category">
+                        <i>
+                            {{x.category}}
+                        </i>
+                    </div>
+                    <div class="product-rating">
+                        Rating: {{x.rating.rate}}
+                    </div>
+                </div>
+                <div class="product-fav">
+                    <button ng-click="addToFav(x)">Add to Fav</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

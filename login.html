@@ -1,0 +1,25 @@
+<div class="auth-box login">
+
+    <div>
+        <h2>
+            Login Page
+        </h2>
+        <!-- <form action=""> -->
+        <label for="email">Email</label>
+        <input type="email" id="email" ng-model="login_email"><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" ng-model="login_password">
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <div class="newuser"> -->
+            <a ng-href="#/signup">new user</a>
+        <!-- </div> -->
+        <br>
+        <div class="red-data">{{failure_text}}</div>
+        <button ng-click="login()">Login</button>
+        <!-- </form> -->
+    </div>
+</div>
+</div>

@@ -1,0 +1,60 @@
+<!-- <div>{{name}}</div> -->
+<!-- <li ng-repeat="x in all_products">{{x}}</li> -->
+<div class="products">
+    <div>
+        <div class="nav">
+            <ul>
+                <li><a ng-href="#/home">Home</a></li>
+                <li><a ng-href="#/products">Products</a></li>
+                <li><a ng-href="#/fav">Favourites</a></li>
+                <li><a ng-href="#/logout">Logout</a></li>
+            </ul>
+        </div>
+        <!-- <div class="categoriesSort">
+            <select name="" id="" ng-change="findByCategory(category)" ng-model="category">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="jewelery">Jewelery</option>
+                <option value="men's clothing">Men's Clothing</option>
+                <option value="women's clothing">Women's Clothing</option>
+            </select>
+        </div> -->
+        <!-- <div class="sortBtns">
+            <button ng-click="sortPriceInc()">sort by price: lowest</button>
+            <button ng-click="sortPriceDec()">sort by price: highest</button>
+            <button ng-click="sortRatingInc()">sort by rating: lowest</button>
+            <button ng-click="sortRatingDec()">sort by rating: highest</button>
+        </div> -->
+        <div class="products">
+            <div class="product">
+                <div class="product-image">
+                    <img src="{{curr_product.image}}" alt="">
+                </div>
+                <div class="product-name">
+                    <b>
+                        {{curr_product.title}}
+                    </b>
+                </div>
+                <div class="product-price">
+                    <i>
+                        {{curr_product.price}}
+                    </i>
+                </div>
+                <div class="product-description">
+                    {{curr_product.description}}
+                </div>
+                <div class="product-category">
+                    <i>
+                        {{curr_product.category}}
+                    </i>
+                </div>
+                <div class="product-rating">
+                    Rating: {{curr_product.rating.rate}}
+                </div>
+                <div class="product-fav">
+                    <button ng-click="addToFav(curr_product)">Add to Fav</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
