@@ -32,7 +32,6 @@ app.config(function ($routeProvider) {
     });
 });
 
-
 app.run(['$rootScope', 'favService', '$location', '$window', function ($rootScope, favService, $location, $window) {
     $rootScope.registered_users = [];
     $rootScope.all_products = [];
@@ -50,6 +49,20 @@ app.run(['$rootScope', 'favService', '$location', '$window', function ($rootScop
     };
     $rootScope.removeFromFav = function (product) {
         favService.removeFromFav(product);
+    };
+
+    favService.getAllFavs(function (data) {
+        $rootScope.favProducts = data;
+    });
+
+    $rootScope.isThereInFav = function (product) {
+        console.log('hererer', $rootScope.favProducts);
+        for(let x of $rootScope.favProducts){
+            console.log(x);
+            if(x.id==product.id) return true;
+        }
+        return false;
+        // return $rootScope.favProducts.includes(product);
     };
 }]);
 
@@ -155,30 +168,30 @@ app.controller('homeController', ['$scope', '$rootScope', 'dataService', '$windo
 
 
 app.controller('favController', ['$scope', '$rootScope', 'favService', function ($scope, $rootScope, favService) {
-    $scope.favProducts = [];
-    favService.getAllFavs(function (data) {
-        $scope.favProducts = data;
-    });
+    // $scope.favProducts = [];
+    // favService.getAllFavs(function (data) {
+    //     $scope.favProducts = data;
+    // });
 
 
     // sortings
     $scope.sortPriceInc = function () {
-        $scope.favProducts.sort(function (a, b) {
+        $rootScope.favProducts.sort(function (a, b) {
             return a.price - b.price;
         });
     }
     $scope.sortPriceDec = function () {
-        $scope.favProducts.sort(function (a, b) {
+        $rootScope.favProducts.sort(function (a, b) {
             return b.price - a.price;
         });
     }
     $scope.sortRatingInc = function () {
-        $scope.favProducts.sort(function (a, b) {
+        $rootScope.favProducts.sort(function (a, b) {
             return a.rating.rate - b.rating.rate;
         });
     };
     $scope.sortRatingDec = function () {
-        $scope.favProducts.sort(function (a, b) {
+        $rootScope.favProducts.sort(function (a, b) {
             return b.rating.rate - a.rating.rate;
         });
     };

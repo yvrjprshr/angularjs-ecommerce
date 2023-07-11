@@ -91,7 +91,7 @@ app.service('favService', ['$http', function ($http) {
             url: (`http://localhost:3000/favs`)
         }).then(
             function (res) { 
-                cb(res.data) 
+                cb(res.data)
             }, 
             function(err) { 
                 console.log(err); 

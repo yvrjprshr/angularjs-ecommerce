@@ -1,26 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
 
-
-.auth-box{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding-top: 200px; */
-    background-color: #a58efa;
+.auth-box {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 200px; */
+  background-color: #a58efa;
 }
 
-.auth-box label{
-    /* display: inline-block; */
-    float: left;
-    /* clear: left; */
-    /* width: 100px; */
-    margin-top: 20px;
-    text-align: right;
+.auth-box label {
+  /* display: inline-block; */
+  float: left;
+  clear: left;
+  /* width: 100px; */
+  margin-top: 20px;
+  /* text-align: right; */
 }
 
 .auth-box input {
@@ -30,181 +33,209 @@
   float: right;
 }
 
-.auth-box button{
-    margin-top: 30px;
-    /* width: 300px; */
-    align-items: center;
+.auth-box button {
+  /* margin-top: 30px; */
+  /* width: 300px; */
+  align-items: center;
 }
 
-.products{
-    width: 100vw;
-    /* height: 100vh; */
-    /* padding-top: 200px; */
-    background-color: #a58efa;
+.products {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* padding-top: 200px; */
+  background-color: #a58efa;
 }
 
-.products>div .products{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 20px;
-    /* padding: 20px; */
-    /* background-color: #fff; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 10px #000; */
+.products > div .products {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  /* padding: 20px; */
+  /* background-color: #fff; */
+  /* border-radius: 10px; */
+  /* box-shadow: 0 0 10px #000; */
 }
 
-.products>div .sortBtns{
-    display: flex;
-    justify-content: center;
+.products > div .sortBtns {
+  display: flex;
+  justify-content: center;
 }
 
-.products > div > .sortBtns > button{
-    margin: 20px;
+.products > div > .sortBtns > button {
+  margin: 20px;
 }
 
-.products>div .categoriesSort{
-    display: flex; 
-    justify-content: center;
-    margin-top: 20px;
+.products > div .categoriesSort {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-select{
-    padding: 10px;
-    border: none;
-    background-color: gray;
-    border-radius: 30px;
-    font-size: 15px;
-    /* width:60px; */
+select {
+  padding: 10px;
+  border: none;
+  background-color: gray;
+  border-radius: 30px;
+  font-size: 15px;
+  /* width:60px; */
 }
 
-.products .product{
-    width: 500px;
-    height: 500px;
-}
-
-.products img{
-    width: 200px;
-    height: 200px;
-}
-
-
-button{
-    margin-top: 10px;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-}
-button:hover{
-    background-color: #000;
-    color: #fff;
-}
-
-.products > div > .nav{
-    display: flex;
-    justify-content: center;
-}
-.products > div > .nav > ul{
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid #000;
-    background-color: #fff;
-}
-
-.products > div > .nav > ul > li{
-    cursor: pointer;
-    padding: 20px;
-}
-
-.products > div > .nav > ul > li:hover{
-    background-color: #a58efa;
-}
-
-.home{
-    background-color: #a58efa;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    /* align-items: center; */
-    height: 100vh;
-    width: 100vw;
+.products .product {
+  /* width: 500px; */
+  /* height: 500px; */
+  width: 380px;
+  position: relative;
+  box-shadow: 0 2px 7px #dfdfdf;
+  margin: 50px auto;
+  background: #fafafa;
 }
 
 
-.home > .nav{
-    display: flex;
-    justify-content: center;
+
+.product-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  /* max-height: 250px; */
 }
-.home > .nav > ul{
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid #000;
-    background-color: #fff;
+.products img {
+  width: 200px;
+  height: 200px;
 }
 
-.home > .nav > ul > li{
-    cursor: pointer;
-    padding: 20px;
+button {
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #000;
+  color: #fff;
 }
 
-.home > div > .nav > ul > li:hover{
-    background-color: #a58efa;
+.products > div > .nav {
+  display: flex;
+  justify-content: center;
+}
+.products > div > .nav > ul {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background-color: #fff;
 }
 
-.home > h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.products > div > .nav > ul > li {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.products > div > .nav > ul > li:hover {
+  background-color: #a58efa;
+}
+
+.home {
+  background-color: #a58efa;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* align-items: center; */
+  height: 100vh;
+  width: 100vw;
+}
+
+.home > .nav {
+  display: flex;
+  justify-content: center;
+}
+.home > .nav > ul {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.home > .nav > ul > li {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.home > div > .nav > ul > li:hover {
+  background-color: #a58efa;
+}
+
+.home > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: white;
+}
+
+.login a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.red-data {
+  color: red;
+}
+
+.products .product {
+  cursor: pointer;
+}
+
+.product {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.home > .nav > ul li:hover {
+  background-color: black;
+  color: white;
+}
+
+.home > .nav > ul > li > a:hover {
+  background-color: black;
+  color: white;
 }
 
 
-a{
-    text-decoration: none;
-    color: #000;
-}
 
-a:hover{
-    color: white;
-}
+/* [[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]] */
+/* [[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]] */
+/* [[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]] */
+/* [[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]] */
 
-.login  a{
-    color: blue;
-    text-decoration: underline;
-}
 
-.red-data{
-    color: red;
-}
 
-.products .product{
-    cursor: pointer;
-}
 
-.product{
-    border: 2px solid black;
-    margin: 20px;
-    padding: 10px;
-}
-
-.home > .nav > ul li:hover{
-    background-color: black;
-    color: white;
-}
-
-.home > .nav > ul > li > a:hover{
-    background-color: black;
-        color: white;
-
+.login, .signup{
+  background-color: #cdf7b2;
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
 }

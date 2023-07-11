@@ -53,7 +53,10 @@
                     Rating: {{curr_product.rating.rate}}
                 </div>
                 <div class="product-fav">
-                    <button ng-click="addToFav(curr_product)">Add to Fav</button>
+                    
+                    <button ng-if="isThereInFav(curr_product)" ng-click="addToFav(curr_product)">Remove Fav</button>
+                    <button ng-if="!isThereInFav(curr_product)" ng-click="addToFav(curr_product)">Add to Fav</button>
+                    <!-- <button ng-click="addToFav(curr_product)">Add to Fav</button> -->
                 </div>
             </div> 
         </div>
