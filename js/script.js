@@ -25,8 +25,6 @@ app.config(function ($routeProvider) {
     }).when('/profile', {
         templateUrl: 'profile.html',
         controller: 'profileController'
-    }).when('/logout', {
-        redirectTo: '/'
     }).otherwise({
         redirectTo: '/' 
     });
@@ -56,18 +54,23 @@ app.run(['$rootScope', 'favService', '$location', '$window', function ($rootScop
     });
 
     $rootScope.isThereInFav = function (product) {
-        console.log('hererer', $rootScope.favProducts);
         for(let x of $rootScope.favProducts){
-            console.log(x);
             if(x.id==product.id) return true;
         }
         return false;
-        // return $rootScope.favProducts.includes(product);
     };
+    $rootScope.logout = function(){
+        $window.localStorage.removeItem('user');
+        $rootScope.isAuthorized = false;
+        $location.path('/');
+    }
 }]);
 
 app.controller('loginController', ['$scope', '$location', '$rootScope', '$window', 'userService', function ($scope, $location, $rootScope, $window, userService) {
-    $window.localStorage.removeItem('user');
+    // $window.localStorage.removeItem('user');
+    if($window.localStorage.getItem('user') != null){
+        $location.path('/home');
+    }
     $rootScope.isAuthorized = false;
     $rootScope.auth = true;
     $rootScope.dashboard = false;
@@ -76,6 +79,7 @@ app.controller('loginController', ['$scope', '$location', '$rootScope', '$window
     $scope.failure_text = "";
     userService.getAllUsers(function (data) {
         $rootScope.registered_users = data;
+        console.log($rootScope.registered_users);
     });
     $scope.login = function () {
         let isgood = false;
@@ -104,19 +108,22 @@ app.controller('signupController', ['$scope', 'userService', '$location', functi
     $scope.reg_password;
 
     var registered_users = [];
-
     $scope.register = function () {
         const user = {
             name: $scope.reg_name,
             email: $scope.reg_email,
             password: $scope.reg_password
         }
+        console.log(user);
         userService.addData(user);
     }
 }]);
 
-app.controller('productsController', ['$scope', '$rootScope', 'dataService', '$location', function ($scope, $rootScope, dataService, $location) {
-    if(!$rootScope.isAuthorized)$location.path('/login');
+app.controller('productsController', ['$scope', '$rootScope', 'dataService', '$location', '$window',function ($scope, $rootScope, dataService, $location, $window) {
+    // if(!$rootScope.isAuthorized)$location.path('/login');
+    if($window.localStorage.getItem('user') == null){
+        $location.path('/login');
+    }
     $scope.name = "dashboard";
     $rootScope.auth = false;
     $scope.category = 'all';
@@ -159,7 +166,10 @@ app.controller('productsController', ['$scope', '$rootScope', 'dataService', '$l
 }]);
 
 app.controller('homeController', ['$scope', '$rootScope', 'dataService', '$window', '$location', function ($scope, $rootScope, dataService, $window, $location) {
-    if(!$rootScope.isAuthorized)$location.path('/login');
+    // if(!$rootScope.isAuthorized)$location.path('/login');
+    if($window.localStorage.getItem('user') == null){
+        $location.path('/login');
+    }
     $scope.profile_user = "";
     if($window.localStorage.getItem('user') != null){
         $scope.profile_user = JSON.parse($window.localStorage.getItem('user'));
@@ -167,7 +177,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'dataService', '$windo
 }]);
 
 
-app.controller('favController', ['$scope', '$rootScope', 'favService', function ($scope, $rootScope, favService) {
+app.controller('favController', ['$scope', '$rootScope', 'favService', '$window', function ($scope, $rootScope, favService, $window) {
     // $scope.favProducts = [];
     // favService.getAllFavs(function (data) {
     //     $scope.favProducts = data;
@@ -175,6 +185,10 @@ app.controller('favController', ['$scope', '$rootScope', 'favService', function 
 
 
     // sortings
+
+    if($window.localStorage.getItem('user') == null){
+        $location.path('/');
+    }
     $scope.sortPriceInc = function () {
         $rootScope.favProducts.sort(function (a, b) {
             return a.price - b.price;
@@ -197,12 +211,22 @@ app.controller('favController', ['$scope', '$rootScope', 'favService', function 
     };
 }]);
 
-app.controller('productController', ['$scope', '$rootScope', '$routeParams', function ($scope, $rootScope, $routeParams) {
+app.controller('productController', ['$scope', '$rootScope', '$routeParams', 'dataService', function ($scope, $rootScope, $routeParams, dataService) {
+    console.log($routeParams.id);
+    // dataService
+    $scope.prod;
+    dataService.getSingleProduct($routeParams.id, function (data) {
+        $scope.prod=data;
+        console.log('prod', $scope.prod);
+    });
 }]);
 
 
 app.controller('profileController', ['$scope', '$rootScope', 'userService', '$location', '$window', function ($scope, $rootScope, userService, $location, $window) {
-    if(!$rootScope.isAuthorized){
+    // if(!$rootScope.isAuthorized){
+    //     $location.path('/login');
+    // }
+    if($window.localStorage.getItem('user') == null){
         $location.path('/login');
     }
     $scope.profile_user = JSON.parse($window.localStorage.getItem('user'));
@@ -217,3 +241,4 @@ app.controller('profileController', ['$scope', '$rootScope', 'userService', '$lo
         });
     }
 }]);
+

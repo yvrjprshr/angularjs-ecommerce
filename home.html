@@ -1,12 +1,28 @@
-<div class="home">
-    <div class="nav">
+<div >
+    <nav>
         <ul>
-            <li><a ng-href="#/home">Home</a></li>
-            <li><a ng-href="#/products">Products</a></li>
-            <li><a ng-href="#/fav">Favourites</a></li>
-            <li><a ng-href="#/profile">Profile</a></li>
-            <li><a ng-href="#/logout">Logout</a></li>
+            <li>
+                <a ng-href="#/home">HOME</a>
+            </li>
+            <li>
+                <a ng-href="#/products">PRODUCTS</a>
+            </li>
+            <li>
+                <a href="#/fav">FAVOURITES</a>
+            </li>
+            <li>
+                <a href="#/profile">PROFILE</a>
+            </li>
+            <li class="sortBtns">
+                <button ng-click="logout()">
+                        LOGOUT
+                </button>
+            </li>
         </ul>
-    </div>
-    <h1>Welcome {{profile_user.name}}</h1>
+
+    </nav>
+    <div class="hom">
+        <h1>
+            Welcome {{profile_user.name}}</div>
+        </h1>
 </div>

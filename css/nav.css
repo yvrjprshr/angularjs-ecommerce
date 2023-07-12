@@ -1,0 +1,45 @@
+/* body{
+    padding: 0;
+    margin: 0;
+    background-color: #f8c400;
+    height: 100vh;
+} */
+nav{
+    width: 100vw;
+}
+ul{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+li{
+    display:  flex;
+    list-style-type: none;
+}
+nav a{
+    background-color: rgb(0, 0, 0);
+    color:cyan;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    padding: 13px 25px;
+    border-radius: 20%;
+}
+a:hover{
+    animation: wiggle 0.5s;
+    border: 2px solid cyan;
+}
+@keyframes wiggle{
+    25%{
+        transform: scale(0.7,1.4);
+    }
+    50%{
+        transform: scale(1.2,0.7);
+    }
+    75%{
+        transform: scale(0.6,1.3);
+    }
+
+}

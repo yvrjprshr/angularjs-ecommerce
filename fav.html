@@ -1,15 +1,28 @@
 <div class="products">
 
     <div>
-        <div class="nav">
+        <nav>
             <ul>
-                <li><a ng-href="#/home">Home</a></li>
-                <li><a ng-href="#/products">Products</a></li>
-                <li><a ng-href="#/fav">Favourites</a></li>
-                <li><a ng-href="#/profile">Profile</a></li>
-                <li><a ng-href="#/logout">Logout</a></li>
+                <li>
+                    <a ng-href="#/home">HOME</a>
+                </li>
+                <li>
+                    <a ng-href="#/products">PRODUCTS</a>
+                </li>
+                <li>
+                    <a href="#/fav">FAVOURITES</a>
+                </li>
+                <li>
+                    <a href="#/profile">PROFILE</a>
+                </li>
+                <li class="sortBtns">
+                    <button ng-click="logout()">
+                            LOGOUT
+                    </button>
+                </li>
             </ul>
-        </div>
+
+        </nav>
         <div class="sortBtns">
             <button ng-click="sortPriceInc()">sort by price: lowest</button>
             <button ng-click="sortPriceDec()">sort by price: highest</button>
@@ -17,7 +30,34 @@
             <button ng-click="sortRatingDec()">sort by rating: highest</button>
         </div>
         <div class="products">
-            <div class="product" ng-repeat="x in favProducts">
+            <div class="product-card" ng-repeat="x in favProducts">
+                <div class="single-product" ng-click="sendSingleProduct(x)">
+                    <span class="card-tag">{{x.category}}</span>
+                    <div class="card-header" style="background-color: white;">
+                        <img src={{x.image}} alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="product-title">{{x.title}}</h4>
+                        <p class="product-status">{{x.description}}</p>
+                        <h3 class="product-rating">Ratings: {{x.rating.rate}}</h3>
+                        <h3 class="product-price">{{x.price}}Rs</h3>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <!-- <button class="btn btn-secondary">
+                        Save
+                    </button> -->
+                    <button ng-if="isThereInFav(x)" ng-click="removeFromFav(x)" class="btn btn-primary"
+                        style="background-color: red;">
+                        Remove Fav
+                    </button>
+                    <button ng-if="!isThereInFav(x)" ng-click="addToFav(x)" class="btn btn-primary">
+                        Add to Fav
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="product" ng-repeat="x in favProducts">
                 <div ng-click="sendSingleProduct(x)">
 
                     <div class="product-image">
@@ -48,7 +88,7 @@
                 <div class="product-fav">
                     <button ng-click="removeFromFav(x)">Remove Fav</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

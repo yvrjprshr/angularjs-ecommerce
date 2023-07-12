@@ -2,32 +2,59 @@
 <!-- <li ng-repeat="x in all_products">{{x}}</li> -->
 <div class="products">
     <div>
-        <div class="nav">
+        <nav>
             <ul>
-                <li><a ng-href="#/home">Home</a></li>
-                <li><a ng-href="#/products">Products</a></li>
-                <li><a ng-href="#/fav">Favourites</a></li>
-                <li><a ng-href="#/profile">Profile</a></li>
-                <li><a ng-href="#/logout">Logout</a></li>
+                <li>
+                    <a ng-href="#/home">HOME</a>
+                </li>
+                <li>
+                    <a ng-href="#/products">PRODUCTS</a>
+                </li>
+                <li>
+                    <a href="#/fav">FAVOURITES</a>
+                </li>
+                <li>
+                    <a href="#/profile">PROFILE</a>
+                </li>
+                <li class="sortBtns">
+                    <button ng-click="logout()">
+                            LOGOUT
+                    </button>
+                </li>
             </ul>
-        </div>
-        <!-- <div class="categoriesSort">
-            <select name="" id="" ng-change="findByCategory(category)" ng-model="category">
-                <option value="all">All</option>
-                <option value="electronics">Electronics</option>
-                <option value="jewelery">Jewelery</option>
-                <option value="men's clothing">Men's Clothing</option>
-                <option value="women's clothing">Women's Clothing</option>
-            </select>
-        </div> -->
-        <!-- <div class="sortBtns">
-            <button ng-click="sortPriceInc()">sort by price: lowest</button>
-            <button ng-click="sortPriceDec()">sort by price: highest</button>
-            <button ng-click="sortRatingInc()">sort by rating: lowest</button>
-            <button ng-click="sortRatingDec()">sort by rating: highest</button>
-        </div> -->
+    
+        </nav>
+
         <div class="products">
-            <div class="product">
+
+            <div class="product-card">
+                <div class="single-product" ng-click="sendSingleProduct(x)">
+                    <span class="card-tag">{{prod.category}}</span>
+                    <div class="card-header" style="background-color: white;">
+                        <img src={{prod.image}} alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="product-title">{{prod.title}}</h4>
+                        <p class="product-status">{{prod.description}}</p>
+                        <h3 class="product-rating">Ratings: {{prod.rating.rate}}</h3>
+                        <h3 class="product-price">{{prod.price}}Rs</h3>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <!-- <button class="btn btn-secondary">
+                        Save
+                    </button> -->
+                    <button ng-if="isThereInFav(prod)" ng-click="removeFromFav(prod)" class="btn btn-primary" style="background-color: red;">
+                        Remove Fav
+                    </button>
+                    <button ng-if="!isThereInFav(prod)" ng-click="addToFav(prod)" class="btn btn-primary">
+                        Add to Fav
+                    </button>
+                </div>
+            </div>
+
+            <!-- <div class="product">
                 <div class="product-image">
                     <img src="{{curr_product.image}}" alt="">
                 </div>
@@ -54,11 +81,10 @@
                 </div>
                 <div class="product-fav">
                     
-                    <button ng-if="isThereInFav(curr_product)" ng-click="addToFav(curr_product)">Remove Fav</button>
+                    <button ng-if="isThereInFav(curr_product)" ng-click="removeFromFav(curr_product)">Remove Fav</button>
                     <button ng-if="!isThereInFav(curr_product)" ng-click="addToFav(curr_product)">Add to Fav</button>
-                    <!-- <button ng-click="addToFav(curr_product)">Add to Fav</button> -->
                 </div>
-            </div> 
+            </div>  -->
         </div>
     </div>
 </div>
