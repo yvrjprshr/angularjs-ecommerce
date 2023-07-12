@@ -44,6 +44,7 @@ Ecommerce Website
     - update user data with this page
 - Logout
     - delete data from Localstorage
+
 ---
 # API
 
@@ -52,3 +53,5 @@ Ecommerce Website
 
 ---
 # Screenshots
+
+---
