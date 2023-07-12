@@ -47,7 +47,8 @@ Ecommerce Website
 ---
 # API
 
-FakeStore API: [link](https://fakestoreapi.com/)
-JSON Server: [link](https://github.com/typicode/json-server)
+- FakeStore API: [link](https://fakestoreapi.com/)
+- JSON Server: [link](https://github.com/typicode/json-server)
+
 ---
 # Screenshots
