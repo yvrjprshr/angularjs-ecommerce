@@ -1,4 +1,4 @@
-# Name
+s # Name
 Ecommerce Website
 
 ---
@@ -53,5 +53,29 @@ Ecommerce Website
 
 ---
 # Screenshots
+
+### Login Page
+![Ecommerce](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/2ad8c362-ddbd-4db2-a41e-05e83685942a)
+
+### Register Page
+![Ecommerce (1)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/ecbbe883-cbdb-4531-9a92-9ed789b1f7d7)
+
+### Home Page
+![Ecommerce (2)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/18dd8b0b-2418-4bfc-b7b6-f438db1cc0b6)
+
+### Products Page
+![Ecommerce (3)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/db912dd3-649e-450d-a11e-971acdb9196f)
+
+### Single Product Page
+![Ecommerce (7)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/508280bc-820e-4bb1-ae8d-3683b4472203)
+
+### Products Page based on Category
+![Ecommerce (4)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/630cf94e-7143-4eac-996a-66cce6800100)
+
+### Favourites Page
+![Ecommerce (5)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/7143d4b9-a62d-437d-bfbf-9b2dc6847797)
+
+### Update Profile Page
+![Ecommerce (6)](https://github.com/yvrjprshr/angularjs-ecommerce/assets/66880935/3e42f33c-5687-41e1-8d40-7e786cec6135)
 
 ---
