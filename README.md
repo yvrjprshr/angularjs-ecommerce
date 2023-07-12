@@ -1,4 +1,4 @@
-s # Name
+# Name
 Ecommerce Website
 
 ---
