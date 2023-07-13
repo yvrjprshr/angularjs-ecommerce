@@ -124,6 +124,14 @@ app.controller('productsController', ['$scope', '$rootScope', 'dataService', '$l
     if($window.localStorage.getItem('user') == null){
         $location.path('/login');
     }
+    $scope.searchTxt=null;
+    $scope.search = function(){
+        console.log($scope.searchTxt);
+        if($scope.searchTxt=="")$scope.dashboard_all_products=$rootScope.all_products;
+        $scope.dashboard_all_products = $scope.dashboard_all_products.filter(function (product) {
+            return product.title.includes($scope.searchTxt) || product.description.includes($scope.searchTxt) | product.category.includes($scope.searchTxt);
+        });
+    };
     $scope.name = "dashboard";
     $rootScope.auth = false;
     $scope.category = 'all';
@@ -178,13 +186,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'dataService', '$windo
 
 
 app.controller('favController', ['$scope', '$rootScope', 'favService', '$window', function ($scope, $rootScope, favService, $window) {
-    // $scope.favProducts = [];
-    // favService.getAllFavs(function (data) {
-    //     $scope.favProducts = data;
-    // });
 
-
-    // sortings
 
     if($window.localStorage.getItem('user') == null){
         $location.path('/');

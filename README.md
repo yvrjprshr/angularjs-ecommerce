@@ -30,6 +30,7 @@ Ecommerce Website
     - Displays Products based on category
     - Sorting Based on Price
     - Sorting Based on Ratings
+    - Searching
     - Add To Favourite
     - Remove From Favourite
     - Displays Single Product on Clicking any Product

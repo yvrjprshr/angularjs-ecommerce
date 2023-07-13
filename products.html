@@ -1,5 +1,4 @@
 <div class="products">
-
     <div>
         <nav>
             <ul>
@@ -21,7 +20,6 @@
                     </button>
                 </li>
             </ul>
-
         </nav>
         <!-- <div class="nav">
             <ul>
@@ -46,6 +44,9 @@
             <button ng-click="sortPriceDec()">sort by price: highest</button>
             <button ng-click="sortRatingInc()">sort by rating: lowest</button>
             <button ng-click="sortRatingDec()">sort by rating: highest</button>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <input type="text" style="background-color: rgb(138, 138, 138); padding: 10px 20px; border: none; box-shadow: 2px 2px bisque; color: black;" ng-model="searchTxt" ng-change="search()" placeholder="search...">
         </div>
         <div class="products">
             <div class="product-card" ng-repeat="x in dashboard_all_products">
